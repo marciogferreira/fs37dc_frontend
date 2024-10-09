@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 function TabelaUsuarios() {
 
     const [lista, setLista] = useState([])
@@ -15,10 +14,19 @@ function TabelaUsuarios() {
         })
     }
 
+    function editarDado(id) {
+        const resposta = fetch('https://jsonplaceholder.typicode.com/users/'+id)
+        const respostaJson = resposta.then((dados) => {
+           return dados.json();
+        })
+        respostaJson.then((json) => {
+            alert(JSON.stringify(json))
+        })
+    }
+
     useEffect(() => {
         consultarDados();
     }, []);
-    
     return (
         <>
             <h1>Tabela de Usuários</h1>
@@ -41,7 +49,7 @@ function TabelaUsuarios() {
                                 <td>{item.name}</td>
                                 <td>{item.email}</td>
                                 <td>
-                                    <button>Editar</button>
+                                    <button onClick={() => editarDado(item.id)}>Editar</button>
                                     <button>Excluir</button>
                                 </td>
                             </tr>

@@ -4,6 +4,7 @@ import LoginPage from "./pages/LoginPage"
 import NotFound from "./pages/NotFound"
 import Menu from "./layout/Menu"
 import TabelaUsuarios from "./pages/UsersPage/TabelaUsuarios"
+import FormularioUsuarios from "./pages/UsersPage/FormularioUsuarios"
 
 function App() {
 
@@ -16,6 +17,10 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
 
           <Route path="/usuarios" element={<TabelaUsuarios />} />
+          <Route 
+            path="/usuarios/editar/:id" 
+            element={<FormularioUsuarios />} 
+          />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
