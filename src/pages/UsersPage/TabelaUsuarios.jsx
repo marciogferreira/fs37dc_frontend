@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 function TabelaUsuarios() {
-
     const [lista, setLista] = useState([])
-
+    const navigate = useNavigate()
     function consultarDados() {
         const resposta = fetch('https://jsonplaceholder.typicode.com/users')
         const respostaJson = resposta.then((dados) => {
@@ -13,14 +13,19 @@ function TabelaUsuarios() {
             setLista(json)
         })
     }
-
     function editarDado(id) {
-        const resposta = fetch('https://jsonplaceholder.typicode.com/users/'+id)
+        navigate(`/usuarios/editar/${id}`)
+    }
+
+    function deletarDado(id) {
+        const resposta = fetch('https://jsonplaceholder.typicode.com/users/'+id, {
+            method: 'DELETE'
+        });
         const respostaJson = resposta.then((dados) => {
            return dados.json();
         })
         respostaJson.then((json) => {
-            alert(JSON.stringify(json))
+            alert("Usuario deletado com sucesso.")
         })
     }
 
@@ -50,7 +55,7 @@ function TabelaUsuarios() {
                                 <td>{item.email}</td>
                                 <td>
                                     <button onClick={() => editarDado(item.id)}>Editar</button>
-                                    <button>Excluir</button>
+                                    <button onClick={() => deletarDado(item.id)}>Excluir</button>
                                 </td>
                             </tr>
                         )

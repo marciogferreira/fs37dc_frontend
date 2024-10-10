@@ -17,10 +17,8 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
 
           <Route path="/usuarios" element={<TabelaUsuarios />} />
-          <Route 
-            path="/usuarios/editar/:id" 
-            element={<FormularioUsuarios />} 
-          />
+          <Route path="/usuarios/novo" element={<FormularioUsuarios />} />
+          <Route path="/usuarios/editar/:id" element={<FormularioUsuarios />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
