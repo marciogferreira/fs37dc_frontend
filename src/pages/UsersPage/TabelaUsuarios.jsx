@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+
 function TabelaUsuarios() {
+
     const [lista, setLista] = useState([])
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
@@ -38,12 +40,12 @@ function TabelaUsuarios() {
         consultarDados();
     }, []);
     return (
-        <>
-            <h1>Tabela de Usuários</h1>
-            <button>Novo</button>
-            <button onClick={consultarDados}>Listar Dados</button>
+        <div className="container">
+            <h3>Tabela de Usuários</h3>
+            <button className="btn btn-success btn-sm">Novo</button>
+            <button onClick={consultarDados} className="btn btn-primary btn-sm">Listar Dados</button>
             {loading ? 'Carregando...' : ''}
-            <table border='1'>
+            <table className="table table-hover table-striped">
                 <thead>
                     <tr>
                         <td>ID</td>
@@ -60,15 +62,15 @@ function TabelaUsuarios() {
                                 <td>{item.name}</td>
                                 <td>{item.email}</td>
                                 <td>
-                                    <button onClick={() => editarDado(item.id)}>Editar</button>
-                                    <button onClick={() => deletarDado(item.id)}>Excluir</button>
+                                    <button className="btn btn-primary btn-sm" onClick={() => editarDado(item.id)}>Editar</button>
+                                    <button className="btn btn-danger btn-sm" onClick={() => deletarDado(item.id)}>Excluir</button>
                                 </td>
                             </tr>
                         )
                     })}
                 </tbody>
             </table>
-        </>
+        </div>
     )
 }
 
