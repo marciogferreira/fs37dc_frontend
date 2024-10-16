@@ -1,29 +1,15 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import PainelPage from "./pages/PainelPage"
-import LoginPage from "./pages/LoginPage"
-import NotFound from "./pages/NotFound"
-import Menu from "./layout/Menu"
-import TabelaUsuarios from "./pages/UsersPage/TabelaUsuarios"
-import FormularioUsuarios from "./pages/UsersPage/FormularioUsuarios"
+import { createContext, useState } from "react"
+import RotasPrivadas from "./routes/RotasPrivadas"
+import LoginPage from "./pages/LoginPage";
+
+export const AutenticacaoContext = createContext();
 
 function App() {
-
+  const [logado, setLogado] = useState(false)
   return (
-    <>
-      <BrowserRouter>
-        <Menu />
-        <Routes>
-          <Route path="/" element={<PainelPage />} />
-          <Route path="/login" element={<LoginPage />} />
-
-          <Route path="/usuarios" element={<TabelaUsuarios />} />
-          <Route path="/usuarios/novo" element={<FormularioUsuarios />} />
-          <Route path="/usuarios/editar/:id" element={<FormularioUsuarios />} />
-
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <AutenticacaoContext.Provider value={{ logado, setLogado }}>
+      {logado ? <RotasPrivadas /> : <LoginPage />}
+    </AutenticacaoContext.Provider>
   )
 }
 

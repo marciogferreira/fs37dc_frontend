@@ -1,6 +1,15 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AutenticacaoContext } from "../App";
 
 function Menu() {
+
+    const { setLogado } = useContext(AutenticacaoContext)
+    
+    function logout() {
+        setLogado(false)
+    }
+
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -17,10 +26,9 @@ function Menu() {
                         <li className="nav-item">
                             <Link className="nav-link" to="/usuarios">Usuários</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/login">Login</Link>
+                        <li>
+                            <a onClick={logout} className="nav-link" href="" >Sair</a>
                         </li>
-                        
                     </ul>
                     </div>
                 </div>
