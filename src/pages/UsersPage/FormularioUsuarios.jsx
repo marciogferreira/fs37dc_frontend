@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -9,7 +10,7 @@ function FormularioUsuarios() {
     const[email, setEmail] = useState('');
 
     function consultarPorId(id) {
-        const resposta = fetch('https://jsonplaceholder.typicode.com/users/'+id)
+        const resposta = fetch('http://localhost:3000/usuarios/'+id)
         const respostaJson = resposta.then((dados) => {
            return dados.json();
         })
@@ -20,26 +21,23 @@ function FormularioUsuarios() {
         })
     }
 
-    function salvarDados() {
-
+    async function salvarDados() {
         const dados = {
             nome: nome,
             login: login,
             email: email
         }
-        const resposta = fetch('https://jsonplaceholder.typicode.com/users', {
-            method: 'POST',
-            body: JSON.stringify(dados)
-        });
-        const respostaJson = resposta.then((dados) => {
-            return dados.json();
-         })
-         respostaJson.then((json) => {
-             alert("Usuario salvo com sucesso.")
-             setNome('')
-             setLogin('')
-             setEmail('')
-         })
+        try {
+            await axios.post('http://localhost:3000/usuarios', dados)
+            alert("Usuario salvo com sucesso.")
+            setNome('')
+            setLogin('')
+            setEmail('')
+        } catch(e) {
+            console.error(e);
+        } finally {
+
+        }
     }
 
     useEffect(() => {

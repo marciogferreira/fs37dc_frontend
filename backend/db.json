@@ -1,0 +1,18 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "name": "Daniel",
+      "email": "daniel@gmail.com",
+      "senha": "123"
+    },
+    {
+      "id": "abc4",
+      "nome": "Felipe",
+      "login": "felipe",
+      "email": "felipe"
+    }
+  ],
+  "produtos": [],
+  "categorias": []
+}

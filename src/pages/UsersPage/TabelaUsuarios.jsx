@@ -10,7 +10,7 @@ function TabelaUsuarios() {
     async function consultarDados() {
         try {
             setLoading(true)
-            const dados = await axios.get('https://jsonplaceholder.typicode.com/users');
+            const dados = await axios.get('http://localhost:3000/usuarios');
             setLista(dados.data)
         } catch(e) {
             alert(e.message)
@@ -27,7 +27,8 @@ function TabelaUsuarios() {
     async function deletarDado(id) {
         try {
             setLoading(true)
-            await axios.delete('https://jsonplaceholder.typicode.com/users/'+id)
+            await axios.delete('http://localhost:3000/usuarios/'+id)
+            consultarDados();
             alert("Usuario deletado com sucesso.")
         } catch(e) {
             alert(e.message)
@@ -42,7 +43,9 @@ function TabelaUsuarios() {
     return (
         <div className="container">
             <h3>Tabela de Usuários</h3>
-            <button className="btn btn-success btn-sm">Novo</button>
+            <button className="btn btn-success btn-sm"
+            onClick={() => navigate('/usuarios/novo')}
+            >Novo</button>
             <button onClick={consultarDados} className="btn btn-primary btn-sm">Listar Dados</button>
             {loading ? 'Carregando...' : ''}
             <table className="table table-hover table-striped">
