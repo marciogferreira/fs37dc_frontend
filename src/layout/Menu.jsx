@@ -24,6 +24,9 @@ function Menu() {
                             <Link className="nav-link active" to="/">Painel</Link>
                         </li>
                         <li className="nav-item">
+                            <Link className="nav-link" to="/produtos">Produtos</Link>
+                        </li>
+                        <li className="nav-item">
                             <Link className="nav-link" to="/usuarios">Usuários</Link>
                         </li>
                         <li>

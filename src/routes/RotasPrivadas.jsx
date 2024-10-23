@@ -5,6 +5,10 @@ import NotFound from "../pages/NotFound"
 import Menu from "../layout/Menu"
 import TabelaUsuarios from "../pages/UsersPage/TabelaUsuarios"
 import FormularioUsuarios from "../pages/UsersPage/FormularioUsuarios"
+
+import ProductIndex from '../pages/ProductPage/ProductIndex'
+import ProductForm from '../pages/ProductPage/ProductForm'
+
 function RotasPrivadas() {
     return (
         <>
@@ -12,9 +16,15 @@ function RotasPrivadas() {
                 <Menu />
                 <Routes>
                 <Route path="/" element={<PainelPage />} />
+
                 <Route path="/usuarios" element={<TabelaUsuarios />} />
                 <Route path="/usuarios/novo" element={<FormularioUsuarios />} />
                 <Route path="/usuarios/editar/:id" element={<FormularioUsuarios />} />
+
+                <Route path="/produtos" element={<ProductIndex />} />
+                <Route path="/produtos/novo" element={<ProductForm />} />
+                <Route path="/produtos/editar/:id" element={<ProductForm />} />
+
 
                 <Route path="*" element={<NotFound />} />
                 </Routes>

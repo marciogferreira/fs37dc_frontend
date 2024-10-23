@@ -15,3 +15,16 @@ URL/ID + GET =  CONSULTAR UM REGISTRO
 URL + DADOS + POST = CRIAR DADOS
 URL/ID + PUT = ALTERAR DADOS
 URL/ID + DELETE = DELETAR DADOS
+
+
+EXECUTAR FRONTEND
+npm install
+npm run dev
+
+DENTRO DA PASTA /backend
+
+npm install -g json-server
+npx json-server --watch db.json
+
+
+
