@@ -13,6 +13,68 @@
       "email": "felipe"
     }
   ],
-  "produtos": [],
-  "categorias": []
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Mouse USB",
+      "valor": 29.99,
+      "quantidade": 100
+    },
+    {
+      "nome": "Monitor 24p Samsung",
+      "valor": "5148",
+      "quantidade": "50",
+      "id": 2
+    },
+    {
+      "nome": "Teste",
+      "valor": "12",
+      "quantidade": "12",
+      "id": 3
+    },
+    {
+      "nome": "Teste 2",
+      "valor": "",
+      "quantidade": "122",
+      "id": 4
+    },
+    {
+      "nome": "Teste 4",
+      "valor": "",
+      "quantidade": "323",
+      "id": 5
+    },
+    {
+      "nome": "Teste",
+      "valor": "",
+      "quantidade": "12",
+      "id": 6
+    },
+    {
+      "nome": "Teste 5",
+      "valor": "5",
+      "quantidade": "5",
+      "id": 7
+    },
+    {
+      "nome": "Monitor 34px",
+      "valor": "1579.20",
+      "quantidade": "100",
+      "id": 8
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "nome": "Vendas",
+      "descricao": "Categorias relacionadas a produtos"
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Cliente Teste",
+      "email": "clienteteste@gmail.com"
+    }
+  ]
 }

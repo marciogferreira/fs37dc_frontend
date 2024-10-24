@@ -7,6 +7,7 @@ function LoginPage() {
     const { setLogado } = useContext(AutenticacaoContext)
 
     function login() {
+      // axios.get('http://localhost:3000/usuarios?email=daniel@gmail.com')
       // BLOCO DE CODIGO VALIDACAO COM BANCO DE DADOS
       // VERIFICA SE LOGIN E SENHA ESTAO CORRETOS
       setLogado(true)

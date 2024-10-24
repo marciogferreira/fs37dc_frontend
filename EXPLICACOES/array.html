@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Arrays
+        const nomes = ["Jose", 12, "Monica"]
+        console.log(nomes[1])
+        console.log(nomes[0])
+        console.log(nomes[2])
+
+        // Objetos
+        const pessoa = {
+            nome: "Daniel",
+            idade: 30,
+            altura: 1.79
+        }
+        console.log(pessoa.nome)
+        console.log(pessoa.idade)
+        console.log(pessoa.altura)
+
+
+        const alunos = [
+            {
+                nome: "Daniel",
+                idade: 30,
+                altura: 1.79
+            },
+            {
+                nome: "Marcio",
+                idade: 34,
+                altura: 1.75
+            }
+        ]
+
+        console.log(alunos[0])
+        console.log(alunos[0].nome)
+        console.log(alunos[0].idade)
+            
+        alunos.map((dado, posicao) => {
+            console.log(posicao + " - " + dado.nome + " - " + dado.idade);
+        })
+    </script>
+</body>
+</html>

@@ -28,3 +28,8 @@ npx json-server --watch db.json
 
 
 
+
+Lista Produtos - GET - http://localhost:3000/produtos
+Cria Produto - POST - http://localhost:3000/produtos
+Atualiza Produto - PUT - http://localhost:3000/produtos/1
+DEleta Produto - DELETE - http://localhost:3000/produtos/1
