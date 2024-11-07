@@ -15,10 +15,10 @@
   ],
   "produtos": [
     {
-      "id": 1,
-      "nome": "Mouse USB",
-      "valor": 29.99,
-      "quantidade": 100
+      "nome": "Mouse USB - Apple",
+      "valor": "36",
+      "quantidade": "10",
+      "id": 1
     },
     {
       "nome": "Monitor 24p Samsung",
@@ -33,9 +33,9 @@
       "id": 3
     },
     {
-      "nome": "Teste 2",
-      "valor": "",
-      "quantidade": "122",
+      "nome": "Digital College",
+      "valor": "36",
+      "quantidade": "10",
       "id": 4
     },
     {
@@ -61,6 +61,42 @@
       "valor": "1579.20",
       "quantidade": "100",
       "id": 8
+    },
+    {
+      "nome": "Teste",
+      "valor": "12",
+      "quantidade": "12",
+      "id": 9
+    },
+    {
+      "nome": "Gregão",
+      "valor": "16",
+      "quantidade": "10",
+      "id": 10
+    },
+    {
+      "nome": "Pizza",
+      "valor": "36",
+      "quantidade": "10",
+      "id": 11
+    },
+    {
+      "nome": "Pizza",
+      "valor": "36",
+      "quantidade": "10",
+      "id": 12
+    },
+    {
+      "nome": "Pizza",
+      "valor": "36",
+      "quantidade": "10",
+      "id": 13
+    },
+    {
+      "nome": "Pizza",
+      "valor": "36",
+      "quantidade": "10",
+      "id": 14
     }
   ],
   "categorias": [

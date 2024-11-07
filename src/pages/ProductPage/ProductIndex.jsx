@@ -60,7 +60,7 @@ function ProductIndex() {
                             <td>{produto.valor}</td>
                             <td>{produto.quantidade}</td>
                             <td>
-                                <button onClick={() => editarItem(produto.id)} className="btn btn-info">Editar</button>
+                                <button id="btn_editar" onClick={() => editarItem(produto.id)} className="btn btn-info">Editar</button>
                                     &nbsp;
                                 <button onClick={() => deletarItem(produto.id)} className="btn btn-danger">Excluir</button>
                             </td>
