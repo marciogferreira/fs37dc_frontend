@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
-
+import Api from '../../config/Api'
+import { AutenticacaoContext } from "../../App";
+import swal from 'sweetalert'
 function TabelaUsuarios() {
 
+    const { setLoading } = useContext(AutenticacaoContext)
     const [lista, setLista] = useState([])
-    const [loading, setLoading] = useState(false)
+  
     const navigate = useNavigate()
     async function consultarDados() {
         try {
             setLoading(true)
-            const dados = await axios.get('http://localhost:3000/usuarios');
+            const dados = await Api.get('usuarios');
             setLista(dados.data)
         } catch(e) {
             alert(e.message)
@@ -27,9 +29,9 @@ function TabelaUsuarios() {
     async function deletarDado(id) {
         try {
             setLoading(true)
-            await axios.delete('http://localhost:3000/usuarios/'+id)
+            await Api.delete('usuarios/'+id)
             consultarDados();
-            alert("Usuario deletado com sucesso.")
+            swal("Sucesso", "Usuario deletado com sucesso.", "success")
         } catch(e) {
             alert(e.message)
         } finally {
@@ -47,7 +49,7 @@ function TabelaUsuarios() {
             onClick={() => navigate('/usuarios/novo')}
             >Novo</button>
             <button onClick={consultarDados} className="btn btn-primary btn-sm">Listar Dados</button>
-            {loading ? 'Carregando...' : ''}
+        
             <table className="table table-hover table-striped">
                 <thead>
                     <tr>

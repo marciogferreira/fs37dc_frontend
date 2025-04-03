@@ -4,20 +4,29 @@ import swal from 'sweetalert';
 import Api from "../../config/Api";
 function LoginPage() {
 
-    const { setLogado } = useContext(AutenticacaoContext)
+    const { setLogado, setLoading } = useContext(AutenticacaoContext)
     const[login, setLogin] = useState('')
     const[password, setPassword] = useState('')
 
     async function handleLogin() {
-      const dados = {
-        email: login, 
-        senha: password
+
+      try {
+        setLoading(true)
+        const dados = {
+          email: login, 
+          senha: password
+        }
+        const response = await Api.post('login', dados)
+        const data = response.data;
+        swal("Sucesso!", data.message, "success");
+        localStorage.setItem('tokenAppHotel', data.token)
+        setLogado(true)
+      } catch(e) {
+        console.log(e)
+      } finally {
+        setLoading(false)
       }
-      const response = await Api.post('login', dados)
-      const data = response.data;
-      swal("Sucesso!", data.message, "success");
-      localStorage.setItem('tokenAppHotel', data.token)
-      setLogado(true)
+    
     }
 
     return (

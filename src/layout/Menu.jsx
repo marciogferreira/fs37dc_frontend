@@ -7,6 +7,7 @@ function Menu() {
     const { setLogado } = useContext(AutenticacaoContext)
     
     function logout() {
+        localStorage.removeItem('tokenAppHotel')
         setLogado(false)
     }
 
