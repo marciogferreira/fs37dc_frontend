@@ -1,7 +1,7 @@
-import axios from "axios";
+
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import Api from '../../config/Api'
 function FormularioUsuarios() {
 
     const params = useParams()
@@ -10,15 +10,12 @@ function FormularioUsuarios() {
     const[email, setEmail] = useState('');
 
     function consultarPorId(id) {
-        const resposta = fetch('http://localhost:3000/usuarios/'+id)
-        const respostaJson = resposta.then((dados) => {
-           return dados.json();
-        })
-        respostaJson.then((json) => {
-            setNome(json.name)
-            setLogin(json.username)
-            setEmail(json.email)
-        })
+        const resposta = Api.get('usuarios/'+id)
+        const { data } = resposta;
+        setNome(data.name)
+        setLogin(data.username)
+        setEmail(data.email)
+    
     }
 
     async function salvarDados() {
@@ -28,7 +25,7 @@ function FormularioUsuarios() {
             email: email
         }
         try {
-            await axios.post('http://localhost:3000/usuarios', dados)
+            await Api.post('usuarios', dados)
             alert("Usuario salvo com sucesso.")
             setNome('')
             setLogin('')

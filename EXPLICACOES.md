@@ -23,3 +23,8 @@ npm run cy:open
 EXECUTANDO BANCO DE DADOS
 cd backend
 npx json-server --watch db.json
+
+
+BIBLIOTECAS EXTRAS
+npm i formik
+npm i yup

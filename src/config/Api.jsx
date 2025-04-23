@@ -1,5 +1,4 @@
 import axios from "axios";
-import { redirect } from "react-router-dom";
 import swal from 'sweetalert'
 const Api = axios.create({
     baseURL: 'http://localhost:3000/'
@@ -28,4 +27,5 @@ Api.interceptors.request.use((config) => {
 }, (error) => {
     return Promise.reject(error);
 })
+
 export default Api;
