@@ -35,7 +35,7 @@ function LoginPage() {
             <div className="col-md-4 offset-md-4 mt-5">
              <div className="d-flex justify-content-center">
              <img 
-                width={'200px'}
+                width={'250px'}
                 src="https://static.vecteezy.com/system/resources/previews/002/064/364/original/hotel-and-resort-logo-template-building-logo-designs-travel-logo-vector.jpg" 
                 alt="" 
               />
