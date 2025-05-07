@@ -6,7 +6,7 @@
   "scripts": {
     "cy:open": "cypress open",
     "dev": "vite",
-    "build": "set NODE_ENV=production && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
