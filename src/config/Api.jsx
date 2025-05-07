@@ -1,7 +1,9 @@
 import axios from "axios";
 import swal from 'sweetalert'
+import 'dotenv/config'
+
 const Api = axios.create({
-    baseURL: 'http://localhost:3000/'
+    baseURL: process.env.NODE_ENV === 'production' ? 'https://fs37-dc-backend.onrender.com/' : 'http://localhost:3000/'
 })
 
 // Interceptor
